@@ -1,0 +1,89 @@
+{
+    "itemRoot": {
+        "id": "root",
+        "type": "group",
+        "bindings": {
+            "size": { "width": "288hdp", "height": "120hdp" }
+        }
+    },
+    "itemBackground": {
+        "id": "itemSprBackground",
+        "type": "rect",
+        "parent": "root",
+        "parameters": "fillColor:#616161;fillAlpha:0.9;strokeWidth:0;strokeColor:#210e61;corners:0",
+        "bindings": {
+            "size": { "width": "88%", "height": "90%" },
+            "position": { "x": "center", "y": "center" }
+        },
+        "effects": ["shadow"],
+        "animations": [
+            "field:opacity;duration:0.5;keyframes:0=50,100=255"
+        ],
+        "childrens": [
+            {
+                "id": "itemImageSpr",
+                "type": "image",
+                "parameters": "folderName:pPhoneMenu",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "position": { "x": 0, "y": 0 },
+                    "image": "$albumImage"
+                }
+            },
+            {
+                "id": "itemSprBackgroundSelected",
+                "type": "rect",
+                "parameters": "fillColor:#5aa4ed;fillAlpha:0;strokeWidth:1;strokeColor:#ffffff;strokeAlpha:0.8;corners:0",
+                "effects": ["glow;distance:4;outerStrength:4;innerStrength:4;quality:0.8;color:0x5aa4ed"],
+                "bindings": {
+                    "visible": "$isActiveInList",
+                    "size": { "width": "100%", "height": "100%" }
+                }
+            }
+        ]
+    },
+    "albumNameSpr": {
+        "id": "albumNameBackground",
+        "parent": "itemSprBackground",
+        "type": "rect",
+        "parameters": "fillColor:#5aa4ed;fillAlpha:0.5;strokeWidth:0;strokeColor:#000000;corners:4",
+        "bindings": {
+            "width": "60%",
+            "height": "24",
+            "position": { "x": 2, "y": "bottom - 4" }
+        },
+        "childrens": [
+            {
+                "id": "alubmNameText",
+                "type": "text",
+                "parameters": "textColor:#FFFFFF;font:size=20,weight=400;outline:color=#000,width=2",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "text": ["%1", "$albumName"]
+                }
+            }
+        ]
+    },
+    "albumItemsCountSpr": {
+        "id": "albumItemCountBackground",
+        "parent": "itemSprBackground",
+        "type": "rect",
+        "parameters": "fillColor:0x5aa4ed;fillAlpha:0.5;strokeWidth:0;strokeColor:#000000;corners:12",
+        "bindings": {
+            "width": "42",
+            "height": "36",
+            "position": { "x": "right - 6", "y": "top + 4" }
+        },
+        "childrens": [
+            {
+                "id": "albumItemsCountText",
+                "type": "text",
+                "parameters": "textColor:#FFFFFF;font:size=26,weight=500;outline:color=#000,width=2",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "text": ["%1", "$albumItemsCount"]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "type": "group",
+    "id": "appIconRoot",
+    "constants": {
+        "playScaleAnimation": true,
+        "initialScale": 0.85,
+        "finalScale": 1.0,
+        "scaleChangeStep": 0.05,
+        "clickAnimation": "field:y;duration:0.2;keyframes:0=0,25=6,50=0,75=6,100=0"
+    },
+    "bindings": {
+        "size": {
+            "width": "76hdp",
+            "height": "76hdp"
+        }
+    },
+    "childrens": [
+        {
+            "type": "button",
+            "id": "_appButton",
+            "parameters": "imageName:field;folderName:pPhoneMenu",
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                },
+                "position": {
+                    "x": "center",
+                    "y": "center"
+                }
+            },
+            "childrens": [
+                {
+                    "type": "image",
+                    "id": "appIconImageSpr",
+                    "effects": ["shadow"],
+                    "parameters": "folderName:pPhoneMenu",
+                    "bindings": {
+                        "size": {
+                            "width": "110%",
+                            "height": "110%"
+                        },
+                        "position": {
+                            "x": "center",
+                            "y": "center"
+                        },
+                        "image": "$appIconImage"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "circle",
+            "id": "alertIconShape",
+            "createIf": "$isAlertIconVisible",
+            "parameters": "fillColor:#ff0000;fillAlpha:1;strokeWidth:1;stokeColor:#000000",
+            "bindings": {
+                "size": {
+                    "width": "22hdp",
+                    "height": "22hdp"
+                },
+                "position": {
+                    "x": "right",
+                    "y": "top"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+{
+    "itemRoot": {
+        "id": "root",
+        "type": "group",
+        "bindings": {
+            "size": { "width": "120hdp", "height": "120hdp" }
+        }
+    },
+    "itemBackground": {
+        "id": "itemSprBackground",
+        "type": "rect",
+        "parent": "root",
+        "parameters": "fillColor:#2c48a3;fillAlpha:0.8;strokeWidth:0;strokeColor:#210e61;corners:12",
+        "bindings": {
+            "size": { "width": "90%", "height": "90%" },
+            "position": { "x": "center", "y": "center" }
+        },
+        "effects": ["shadow"],
+        "animations": [
+            "field:opacity;duration:0.5;keyframes:0=50,100=255"
+        ],
+        "childrens": [
+            {
+                "id": "itemSprBackgroundSelected",
+                "type": "rect",
+                "parameters": "fillColor:#5aa4ed;fillAlpha:0.8;strokeWidth:2;strokeColor:#205487;corners:12",
+                "bindings": {
+                    "visible": "$isActiveInList",
+                    "size": { "width": "100%", "height": "100%" }
+                }
+            },
+            {
+                "id": "itemImageSpr",
+                "type": "image",
+                "parameters": "folderName:pPhoneMenu;keepAspect",
+                "effects": ["shadow"],
+                "bindings": {
+                    "size": { "width": "78%", "height": "78%"},
+                    "position": { "x": "center", "y": "center - 6" },
+                    "image": "$itemImage"
+                }
+            }
+        ]
+    },
+    "itemPrice": {
+        "id": "itemPriceBackground",
+        "parent": "itemSprBackground",
+        "type": "rect",
+        "parameters": "fillColor:#6737a6;fillAlpha:0.7;strokeWidth:0;strokeColor:#000000;corners:16",
+        "bindings": {
+            "width": "90%",
+            "height": "26",
+            "position": { "x": "center", "y": "bottom - 4" }
+        },
+        "childrens": [
+            {
+                "id": "itemPriceText",
+                "type": "text",
+                "parameters": "font:size=20,weight=400;outline:color=#000,width=2",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "text": ["%1", "$itemPrice"],
+                    "textColor": "$itemPriceColor"
+                },
+                "constants": {
+                    "normalPriceTextColor": "#e39032",
+                    "highPriceTextColor": "#eb2a2a"
+                }
+            }
+        ]
+    }
+}

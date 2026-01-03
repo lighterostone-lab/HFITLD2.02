@@ -1,0 +1,81 @@
+{
+    "type": "group",
+    "id": "_messageScreenRoot",
+    "bindings": {
+        "size": {
+            "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+            "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+        }
+    },
+    "childrens": [{
+            "type": "image",
+            "id": "messageBackgroundImgSpr",
+            "parameters": "folderName:pPhoneMenu",
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                },
+                "image": "$backgroundImageName"
+            }
+        },
+        {
+            "type": "group",
+            "id": "_messagesVerticalScrollContainer",
+            "constants": {
+                "scrollVerticalStep": "20hdp",
+                "nextMessageWaitTimeInSeconds": 1
+            },
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "90%"
+                }
+            }
+        },
+        {
+            "type": "group",
+            "id": "_nextMessageWaitStatusGroup",
+            "bindings": {
+                "size": {
+                    "width": "94%",
+                    "height": "26hdp"
+                },
+                "position": {
+                    "x": "center",
+                    "y": 4
+                },
+                "visible": "$isWaitStatusVisible"
+            },
+            "childrens": [
+                {
+                    "type": "rect",
+                    "parameters": {
+                        "corners": 12,
+                        "fillColor": "#000000",
+                        "fillAlpha": 0.8,
+                        "strokeWidth": 0
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "100%",
+                            "height": "100%"
+                        }
+                    },
+                    "childrens": [
+                        {
+                            "type": "text",
+                            "id": "_waitStatusTextSpr",
+                            "bindings": {
+                                "size": { "width": "100%", "height": "100%" },
+                                "position": { "x": "center", "y": "center" },
+                                "fontSize": "17hdp",
+                                "text": ["%1 is writing %2", "$whoWaitText", "$waitProgressText"]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type": "group",
+    "id": "_messagesAppListItemRoot",
+    "bindings": {
+        "size": { "width": "240hdp", "height": "42hdp" }
+    },
+    "childrens": [
+        {
+            "type": "plane",
+            "id": "_messageBackground",
+            "parameters": "folderName:pPhoneMenu;imageName:field4;margins:20",
+            "bindings": {
+                "size": { "width": "100%", "height": "100%" }
+            }
+        },
+        {
+            "type": "plane",
+            "id": "_messageSelectedState",
+            "effects": ["shadow"],
+            "parameters": "folderName:pPhoneMenu;imageName:field4;margins:20",
+            "bindings": {
+                "visible": "$isActiveInList",
+                "size": { "width": "100%", "height": "100%" },
+                "opacity": 220
+            }
+        },
+        {
+            "type": "textExt",
+            "id": "_choiceTextSpr",
+            "bindings": {
+                "size": { "width": "80%", "height": "70%" },
+                "position": { "x": "center", "y": "center" },
+                "fontSize": "18hdp",
+                "text": ["%1", "$choiceText"]
+            }
+        }
+    ]
+}

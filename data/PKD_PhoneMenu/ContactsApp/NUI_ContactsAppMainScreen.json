@@ -1,0 +1,41 @@
+{
+    "type": "group",
+    "id": "_contactsAppMainScreen",
+    "animations": ["field:opacity;delay:0.25;duration:0.4;keyframes:0=0,100=255"],
+    "bindings": {
+        "size": {
+            "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+            "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+        }
+    },
+    "childrens": [
+        {
+            "type": "list",
+            "id": "_contactsList",
+            "parameters": {
+                "maxCols": 1,
+                "isHaveSelectionEffect": false,
+                "selectionEffects": ["glow;distance:12;outerStrength:3"],
+                "scaleItemsWidth": false,
+                "scaleItemsHeight": false,
+                "isDrawDefaultItemBack": false,
+                "defaultItemHeight": 0,
+                "backgroundType": 2,
+                "itemsPadding": 6,
+                "isHaveInOutAnimation": true,
+                "isHorizontal": false,
+                "inAnimation": "field:x;duration:0.15;keyframes:0=0,100=4",
+                "outAnimation": "field:x;duration:0.15;keyframes:0=4,100=0",
+                "isPlayOkSound": false,
+                "isPlayCursorSound": true
+            },
+            "bindings": {
+                "position": { "x": "center", "y": "6hdp" },
+                "size": {
+                    "width": "100%",
+                    "height": "100% - 58hdp"
+                }
+            }
+        }
+    ]
+}

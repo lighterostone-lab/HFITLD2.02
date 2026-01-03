@@ -1,0 +1,37 @@
+{
+    "type": "group",
+    "bindings": {
+        "size": {
+            "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+            "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+        }
+    },
+    "childrens": [
+        {
+            "type": "group",
+            "id": "_elementsContainer"
+        },
+        {
+            "type": "legacyButton",
+            "createIf": "$isCanMakeCall",
+            "id": "_callButton",
+            "parameters": {
+                "imageName": "btnCall",
+                "folderName": "pPhoneMenu",
+                "isFull": false,
+                "isCheckAlpha": false,
+                "forceSize": true
+            },
+            "bindings": {
+                "size": {
+                    "width": "132hdp",
+                    "height": "34hdp"
+                },
+                "position": {
+                    "x": "center",
+                    "y": "bottom - 52hdp"
+                }
+            }
+        }
+    ]
+}

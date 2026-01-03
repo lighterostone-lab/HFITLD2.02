@@ -1,0 +1,100 @@
+{
+    "type": "group",
+    "bindings": {
+        "size": {
+            "width": "260hdp",
+            "height": "56hdp"
+        }
+    },
+    "childrens": [
+        {
+            "type": "plane",
+            "id": "_contactBackground",
+            "parameters": {
+                "imageName": "field3",
+                "margins": 20,
+                "folderName": "pPhoneMenu"
+            },
+            "bindings": {
+                "size": { "width": "100%", "height": "100%" }
+            }
+        },
+        {
+            "type": "plane",
+            "id": "_selectedImage",
+            "effects": ["shadow"],
+            "parameters": {
+                "imageName": "field2",
+                "margins": 20,
+                "folderName": "pPhoneMenu"
+            },
+            "bindings": {
+                "visible": "$isActiveInList",
+                "size": { "width": "100%", "height": "100%" },
+                "opacity": 200
+            }
+        },
+        {
+            "type": "image",
+            "id": "_contactPersonFaceImageSpr",
+            "parameters": {
+                "folderName": "pPhoneMenu",
+                "keepAspect": false,
+                "useAspectSize": false
+            },
+            "bindings": {
+                "size": { "width": "52hdp", "height": "52hdp" },
+                "position": { "x": "6hdp", "y": "center" },
+                "image": "$faceImageName"
+            }
+        },
+        {
+            "type": "text",
+            "id": "_contactPersonNameTextSpr",
+            "parameters": {
+                "alignment": "left",
+                "font": {
+                    "face": null,
+                    "size": 18,
+                    "italic": false,
+                    "bold": false,
+                    "weight": 0
+                },
+                "margins": { "x": 0, "y": 0 },
+                "outline": { "color": "#000000", "width": 2 },
+                "textColor": "#FFFFFF",
+                "shadow": {
+                    "color": "#000",
+                    "opacity": 220,
+                    "margins": { "x": 1, "y": 0.5 }
+                },
+                "multiline": false,
+                "verticalCentered": true,
+                "actualWidth": false,
+                "actualHeight": false,
+                "isLoadFontFromFile": false
+            },
+            "bindings": {
+                "size": { "width": "100%", "height": "90%" },
+                "position": { "x": "prevEndX + 6hdp", "y": "center" },
+                "fontSize": "20hdp",
+                "text": ["%1", "$nameText"]
+            }
+        },
+        {
+            "type": "image",
+            "id": "_contactExtraImageSpr",
+            "parameters": {
+                "folderName": "pPhoneMenu",
+                "keepAspect": false,
+                "useAspectSize": false
+            },
+            "bindings": {
+                "image": "$extraImageName",
+                "size": { "width": "16hdp", "height": "16hdp" },
+                "x": "$extraImageX",
+                "y": "$extraImageY"
+            }
+        }
+    ]
+}
