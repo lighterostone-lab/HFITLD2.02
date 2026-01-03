@@ -1,0 +1,66 @@
+{
+    "type": "group",
+    "id": "_messagesAppListItemRoot",
+    "bindings": {
+        "size": { "width": "260hdp", "height": "60hdp" }
+    },
+    "childrens": [
+        {
+            "type": "plane",
+            "id": "_messageBackground",
+            "parameters": "folderName:pPhoneMenu;imageName:field3;margins:20",
+            "bindings": {
+                "size": { "width": "100%", "height": "100%" }
+            }
+        },
+        {
+            "type": "plane",
+            "id": "_messageSelectedState",
+            "effects": ["shadow"],
+            "parameters": "folderName:pPhoneMenu;imageName:field2;margins:20",
+            "bindings": {
+                "visible": "$isActiveInList",
+                "size": { "width": "100%", "height": "100%" },
+                "opacity": 200
+            }
+        },
+        {
+            "type": "image",
+            "id": "_messageAuthorFaceImageSpr",
+            "parameters": "folderName:pPhoneMenu",
+            "bindings": {
+                "size": { "width": "52hdp", "height": "52hdp" },
+                "position": { "x": "6hdp", "y": "center" },
+                "image": "$authorFaceImageName"
+            }
+        },
+        {
+            "type": "text",
+            "id": "_messageAuthorNameTextSpr",
+            "parameters": {
+                "alignment": "left",
+                "outline": { "width": 2, "color": "#000000" }
+            },
+            "bindings": {
+                "size": { "width": "100%", "height": "90%" },
+                "position": { "x": "prevEndX + 6hdp", "y": "center" },
+                "fontSize": "20hdp",
+                "text": ["%1", "$authorNameText"]
+            }
+        },
+        {
+            "type": "circle",
+            "id": "_messageNewMarker",
+            "parameters": {
+                "fillColor": "#FF0000",
+                "strokeColor": "#FFFFFF",
+                "strokeWidth": 2
+            },
+            "bindings": {
+                "visible": "$isHaveNewMessages",
+                "size": { "width": "16hdp", "height": "16hdp" },
+                "position": { "x": "right - 4hdp", "y": "top + 4hdp" }
+            }
+        }
+    ]
+}

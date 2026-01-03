@@ -1,0 +1,126 @@
+{
+    "type": "screen",
+    "id": "phoneRoot",
+    "childrens": [{
+        "type": "group",
+        "id": "_phoneContainer",
+        "animations": [
+            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+            "field:y;relative;duration:0.2;keyframes:0=60dp,100=0"
+        ],
+        "bindings": {
+            "size": {
+                "width": "310hdp",
+                "height": "585hdp"
+            },
+            "position": {
+                "x": "center",
+                "y": "center"
+            }
+        },
+        "childrens": [{
+                "type": "rect",
+                "id": "phoneScreen",
+                "parameters": "fillColor:#000000;fillAlpha:1;strokeWidth:0",
+                "bindings": {
+                    "size": {
+                        "width": "92%",
+                        "height": "84%"
+                    },
+                    "position": {
+                        "x": "center",
+                        "y": "center"
+                    }
+                },
+                "childrens": [{
+                    "type": "image",
+                    "id": "_wallpaper",
+                    "parameters": "folderName:pPhoneMenu",
+                    "bindings": {
+                        "size": {
+                            "width": "100%",
+                            "height": "100%"
+                        },
+                        "image": "$phoneWallpaperImage"
+                    }
+                },
+                {
+                    "type": "group",
+                    "id": "phoneAppHeader",
+                    "bindings": {
+                        "size": {
+                            "width": "100%",
+                            "height": "24hdp"
+                        },
+                        "position": {
+                            "x": "center",
+                            "y": 6
+                        }
+                    },
+                    "childrens": [
+                            {
+                                "type": "rect",
+                                "parameters": "fillColor:#00082b;fillAlpha:0.8;strokeWidth:0",
+                                "bindings": {
+                                    "size": {
+                                        "width": "100%",
+                                        "height": "100%"
+                                    }
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "id": "headerTextItemSpr",
+                                "effects": ["shadow"],
+                                "parameters": "textColor:#FFFFFF",
+                                "bindings": {
+                                    "size": {
+                                        "width": "100%",
+                                        "height": "100%"
+                                    },
+                                    "position": {
+                                        "x": "center",
+                                        "y": "center"
+                                    },
+                                    "text": ["%1", "$headerText"],
+                                    "fontSize": "18hdp"
+                                }
+                            }
+                        ]
+                },
+            {
+                "type": "group",
+                "id": "phoneScreenContentContainer",
+                "bindings": {
+                    "position": {
+                        "x": "center",
+                        "y": "prevEndY"
+                    }
+                },
+                "childrens": [
+                    {
+                        "type": "group",
+                        "animations": [
+                            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+                            "field:y;relative;duration:0.2;keyframes:0=60dp,100=0"
+                        ],
+                        "id": "_appsContainer"
+                    }
+                ]
+            }]
+            },
+            {
+                "type": "image",
+                "id": "_phoneFace",
+                "parameters": "folderName:pPhoneMenu",
+                "bindings": {
+                    "size": {
+                        "width": "100%",
+                        "height": "100%"
+                    },
+                    "image": "$phoneFaceImage"
+                }
+            }
+        ]
+    }]
+}

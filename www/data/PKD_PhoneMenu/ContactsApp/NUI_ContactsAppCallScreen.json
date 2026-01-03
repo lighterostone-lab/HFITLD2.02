@@ -1,0 +1,218 @@
+{
+    "type": "group",
+    "constants": {
+        "textforCalling": "Calling",
+        "textForAbort": "Call aborted",
+        "textforCallEnded": "Call ended",
+        "isAppendDots": true,
+        "isAutoCancelCallIfEnds": true,
+        "isStopAnimationWhenTalkStarted": true,
+        "callingSound": "",
+        "callEndSound": "",
+        "callAbortedSound": "",
+        "talkStartSound": ""
+    },
+    "bindings": {
+        "size": {
+            "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+            "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+        }
+    },
+    "childrens": [
+        {
+            "type": "rect",
+            "id": "_background",
+            "parameters": {
+                "corners": 0,
+                "fillGradient": null,
+                "gradientStart": { "x": 0, "y": 0 },
+                "gradientEnd": { "x": 0, "y": 100 },
+                "fillColor": "#000000",
+                "fillAlpha": 0.9,
+                "strokeWidth": 0,
+                "strokeColor": "#000000",
+                "strokeAlpha": 1
+            },
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                }
+            }
+        },
+        {
+            "type": "image",
+            "id": "_callScreenBack",
+            "parameters": {
+                "folderName": "pPhoneMenu",
+                "keepAspect": false,
+                "useAspectSize": false
+            },
+            "bindings": {
+                "size": {
+                    "width": "244hdp",
+                    "height": "228hdp"
+                },
+                "position": {
+                    "x": "center",
+                    "y": "center - 40hdp"
+                },
+                "image": "$callScreenBackImageName"
+            },
+            "childrens": [
+                {
+                    "type": "text",
+                    "id": "_contactNameTextSpr",
+                    "effects": ["shadow"],
+                    "parameters": {
+                        "alignment": "center",
+                        "font": {
+                            "face": null,
+                            "size": 22,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": null, "width": 2 },
+                        "textColor": "#FFFFFF",
+                        "shadow": {
+                            "color": "#000",
+                            "opacity": 0,
+                            "margins": { "x": 1, "y": 1 }
+                        },
+                        "text": "",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualWidth": false,
+                        "actualHeight": false,
+                        "isLoadFontFromFile": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "90%",
+                            "height": "32hdp"
+                        },
+                        "position": {
+                            "x": "center",
+                            "y": "10hdp"
+                        },
+                        "text": "$contactName"
+                    }
+                },
+                {
+                    "type": "group",
+                    "bindings": {
+                        "size": {
+                            "width": "48hdp",
+                            "height": "48hdp"
+                        },
+                        "position": {
+                            "x": "center",
+                            "y": "prevEndY + 4hdp"
+                        }
+                    },
+                    "childrens": [
+                        {
+                            "type": "image",
+                            "id": "_contactFaceImage",
+                            "animations": [
+                                {
+                                    "field": "_scaleFactor",
+                                    "duration": 2,
+                                    "delay": 0,
+                                    "repeats": -1,
+                                    "keyframes": {
+                                        "0": 1,
+                                        "25": 1.1,
+                                        "50": 1,
+                                        "75": 1.1,
+                                        "100": 1
+                                    }
+                                }
+                            ],
+                            "parameters": {
+                                "folderName": "pPhoneMenu",
+                                "keepAspect": false,
+                                "useAspectSize": false
+                            },
+                            "bindings": {
+                                "size": {
+                                    "width": "100%",
+                                    "height": "100%"
+                                },
+                                "position": {
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                "image": "$contactFaceImageName",
+                                "centeredScale": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "_callStatusTextSpr",
+                    "parameters": {
+                        "alignment": "center",
+                        "font": {
+                            "face": null,
+                            "size": 20,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": null, "width": 2 },
+                        "textColor": "#FFFFFF",
+                        "shadow": {
+                            "color": "#000",
+                            "opacity": 0,
+                            "margins": { "x": 1, "y": 1 }
+                        },
+                        "text": "",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualWidth": false,
+                        "actualHeight": false,
+                        "isLoadFontFromFile": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "90%",
+                            "height": "32hdp"
+                        },
+                        "position": {
+                            "x": "center",
+                            "y": "prevEndY + 20hdp"
+                        },
+                        "text": "$callStatusText"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "legacyButton",
+            "id": "_callEndButton",
+            "parameters": {
+                "imageName": "callCancel_button",
+                "folderName": "pPhoneMenu",
+                "isFull": false,
+                "isCheckAlpha": false,
+                "forceSize": true
+            },
+            "bindings": {
+                "size": {
+                    "width": "74hdp",
+                    "height": "74hdp"
+                },
+                "position": {
+                    "x": "center",
+                    "y": "prevEndY - 36hdp"
+                },
+                "visible": "$isCallEndButtonVisible"
+            }
+        }
+    ]
+}

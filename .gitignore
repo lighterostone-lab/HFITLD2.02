@@ -1,0 +1,43 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Build / output
+dist/
+build/
+docs/
+
+# Large packaged game assets
+*.pak
+*.pak.info
+nw_*.pak
+resources.pak
+
+# Runtime save files
+save/
+www/save/
+
+# Logs
+*.log
+
+# Docker
+.dockerignore
+
+# Environment
+.env
+
+# Misc
+.cache/

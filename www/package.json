@@ -1,0 +1,12 @@
+{
+    "name": "末日の中で彼女が堕落した",
+    "main": "index.html",
+    "js-flags": "--expose-gc",
+    "window": {
+        "title": "末日の中で彼女が堕落した",
+        "toolbar": false,
+        "width": 1280,
+        "height": 720,
+        "icon": "icon/icon.png"
+    }
+}

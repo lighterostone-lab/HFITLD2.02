@@ -1,0 +1,103 @@
+{
+    "itemCardBackground": {
+        "id": "itemCardBackground",
+        "type": "rect",
+        "parameters": "fillColor:#000000;fillAlpha:0.8;strokeWidth:0",
+        "bindings": {
+            "size": {
+                "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+                "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+            },
+            "position": { "x": 0, "y": 0 }
+        },
+        "animations": [
+            "field:opacity;duration:0.4;keyframes:0=50,100=255"
+        ]
+    },
+    "image": {
+        "id": "itemImageSpr",
+        "parent": "itemCardBackground",
+        "type": "image",
+        "parameters": "folderName:pPhoneMenu;keepAspect",
+        "bindings": {
+            "size": { "width": "98%", "height": "100% - 32hdp" },
+            "position": { "x": "center", "y": "32hdp" },
+            "image": "$imageName"
+        },
+        "animations": [
+            "field:y;relative;duration:0.25;keyframes:0=60,50=40,100=0"
+        ],
+        "constants": {
+            "gifVideoExtraMargins": { "x": 4, "y": 4 }
+        },
+        "childrens": [
+            {
+                "id": "itemNameBackground",
+                "type": "rect",
+                "parameters": "fillColor:#5aa4ed;fillAlpha:0.5;strokeWidth:0;strokeColor:#000000;corners:4",
+                "bindings": {
+                    "size": { "width": "98%", "height": "32hdp"},
+                    "position": { "x": "center", "y": "-height" },
+                    "visible": "$isHaveTitle"
+                },
+                "effects": ["shadow;rotation:90"],
+                "childrens": [
+                    {
+                        "id": "itemNameText",
+                        "type": "text",
+                        "parameters": "font:size=20;outline:color=#000,width=2",
+                        "bindings": {
+                            "size": { "width": "100%", "height": 32},
+                            "text": ["%1", "$imageTitleText"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "backButton": {
+        "id": "backButton",
+        "parent": "itemCardBackground",
+        "type": "button",
+        "parameters": "imageName:field;folderName:pPhoneMenu;width:46;height:46;tint:0x5aa4ed;overTint:0x3b9af7;activeTint:0x1a5691;clickSe:Cursor1",
+        "bindings": {
+            "position": { "x": 8, "y": "32hdp" },
+            "handler": "$backClick"
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:back;folderName:pPhoneMenu;keepAspect;width:24;height:24",
+                "bindings": {
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ],
+        "animations": [
+            "field:opacity;duration:0.4;keyframes:0=50,100=255"
+        ]
+    },
+    "zoomButton": {
+        "id": "zoomButton",
+        "parent": "itemCardBackground",
+        "type": "button",
+        "parameters": "imageName:field;folderName:pPhoneMenu;width:46;height:46;tint:0x07f75f;overTint:0x00cf4c;activeTint:0x46825c;clickSe:Cursor1;keyboardKey:ok",
+        "bindings": {
+            "position": { "x": "right - 8", "y": "prevY" },
+            "handler": "$zoomClick",
+            "visible": "$isCanZoom"
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:zoom;folderName:pPhoneMenu;keepAspect;width:36;height:36",
+                "bindings": {
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ],
+        "animations": [
+            "field:opacity;duration:0.4;keyframes:0=50,100=255"
+        ]
+    }
+}

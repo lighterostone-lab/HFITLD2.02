@@ -1,0 +1,46 @@
+{
+    "messagesListElement": {
+        "type": "list",
+        "constants": {
+            "onChoiceSelectedSE": "Cursor1"
+        },
+        "id": "_messagesList",
+        "animations": [
+            "field:opacity;duration:0.3;keyframes:0=25,100=255;delay:0.25",
+            "field:y;relative;duration:0.2;keyframes:0=-20,100=0;delay:0.25"
+        ],
+        "parameters": {
+            "maxCols": 1,
+            "backgroundType": 2,
+            "itemsPadding": 4,
+            "isHaveInOutAnimation": true
+        },
+        "bindings": {
+            "size": { "width": "100%", "height": "90%" },
+            "position": { "x": "center", "y": "center" }
+        }
+    },
+    "inMessageChoicesListElement": {
+        "type": "list",
+        "constants": {
+            "onChoiceSelectedSE": "Cursor1",
+            "heightPerChoiceItem": "56hdp",
+            "maxChoicesToShow": 6
+        },
+        "id": "_messageChoicesList",
+        "animations": [
+            "field:opacity;duration:0.15;keyframes:0=25,100=255"
+        ],
+        "parameters": {
+            "maxCols": 1,
+            "backgroundType": 2,
+            "itemsPadding": 4,
+            "isHaveInOutAnimation": true
+        },
+        "bindings": {
+            "size2": { "width": "100%", "height": "126" },
+            "width": "100%",
+            "height": "$choicesListHeight"
+        }
+    }
+}

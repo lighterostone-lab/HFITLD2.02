@@ -1,0 +1,45 @@
+{
+    "itemRoot": {
+        "id": "root",
+        "type": "group",
+        "bindings": {
+            "size": { "width": "120hdp", "height": "160hdp" }
+        }
+    },
+    "itemBackground": {
+        "id": "itemSprBackground",
+        "type": "rect",
+        "parent": "root",
+        "parameters": "fillColor:#616161;fillAlpha:0.1;strokeWidth:0;strokeColor:#210e61;corners:0",
+        "bindings": {
+            "size": { "width": "90%", "height": "90%" },
+            "position": { "x": "center", "y": "center" }
+        },
+        "effects": ["shadow"],
+        "animations": [
+            "field:opacity;duration:0.5;keyframes:0=50,100=255"
+        ],
+        "childrens": [
+            {
+                "id": "itemImageSpr",
+                "type": "image",
+                "parameters": "folderName:pPhoneMenu;keepAspect",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "position": { "x": 0, "y": 0 },
+                    "image": "$itemImage"
+                }
+            },
+            {
+                "id": "itemSprBackgroundSelected",
+                "type": "rect",
+                "parameters": "fillColor:#5aa4ed;fillAlpha:0;strokeWidth:1;strokeColor:#ffffff;strokeAlpha:0.8;corners:0",
+                "effects": ["glow;distance:4;outerStrength:4;innerStrength:4;quality:0.8;color:0x5aa4ed"],
+                "bindings": {
+                    "visible": "$isActiveInList",
+                    "size": { "width": "100%", "height": "100%" }
+                }
+            }
+        ]
+    }
+}

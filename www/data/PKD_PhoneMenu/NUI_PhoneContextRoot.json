@@ -1,0 +1,46 @@
+{
+    "type": "group",
+    "id": "_phoneContextRoot",
+    "constants": {
+        "showAppContentDelayMS": 200
+    },
+    "bindings": {
+        "size": {
+            "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+            "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+        },
+        "position": {
+            "x": "center",
+            "y": "center"
+        }
+    },
+    "childrens": [
+        {
+            "type": "image",
+            "id": "_contextBack",
+            "animations": [
+                "field:opacity;duration:0.3;keyframes:0=25,100=255",
+                "field:y;relative;duration:0.2;keyframes:0=-20,100=0"
+            ],
+            "parameters": "folderName:pPhoneMenu",
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                },
+                "image": "$appBackgroundImage"
+            }
+        },
+        {
+            "type": "group",
+            "id": "appContent",
+            "bindings": {
+                "visible": "$isContentVisible",
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                }
+            }
+        }
+    ]
+}

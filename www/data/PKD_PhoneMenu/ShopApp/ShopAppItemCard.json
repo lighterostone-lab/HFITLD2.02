@@ -1,0 +1,149 @@
+{
+    "itemCardBackground": {
+        "id": "itemCardBackground",
+        "type": "rect",
+        "parameters": "fillColor:#000000;fillAlpha:0.5;strokeWidth:0",
+        "bindings": {
+            "size": {
+                "width": "@PKD_PhoneMenu.Utils.screenSize().w",
+                "height": "@PKD_PhoneMenu.Utils.screenSize().h"
+            },
+            "position": { "x": 0, "y": 0 }
+        },
+        "animations": [
+            "field:opacity;duration:0.4;keyframes:0=50,100=255"
+        ],
+        "childrens": [
+            {
+                "id": "itemCardPlane",
+                "type": "plane",
+                "parameters": "imageName:field2;folderName:pPhoneMenu",
+                "effects": ["shadow"],
+                "bindings": {
+                    "size": { "width": "90%", "height": "82%"},
+                    "position": { "x": "center", "y": "4%" }
+                },
+                "animations": [
+                    "field:y;relative;duration:0.25;keyframes:0=60,50=40,100=0"
+                ]
+            }
+        ]
+    },
+    "itemName" : {
+        "id": "itemNameBackground",
+        "parent": "itemCardPlane",
+        "type": "rect",
+        "parameters": "fillColor:#2c48a3;fillAlpha:0.9;strokeWidth:0;corners:12",
+        "bindings": {
+            "size": { "width": "98%", "height": 40},
+            "position": { "x": "center", "y": 1 }
+        },
+        "effects": ["shadow;rotation:90"],
+        "childrens": [
+            {
+                "id": "itemNameText",
+                "type": "text",
+                "parameters": "font:size=20;outline:color=#000,width=2",
+                "bindings": {
+                    "size": { "width": "100%", "height": 40},
+                    "text": ["%1", "$itemName"]
+                }
+            }
+        ]
+    },
+    "itemIconSpr": {
+        "id": "itemIcon",
+        "parent": "itemCardPlane",
+        "type": "image",
+        "effects": ["shadow"],
+        "parameters": "folderName:pPhoneMenu;width:72;height:72;keepAspect",
+        "bindings": {
+            "position": { "x": "center", "y": "prevEndY + 12" },
+            "image": "$itemImage"
+        }
+    },
+    "itemPriceSpr": {
+        "id": "itemPriceBackground",
+        "parent": "itemCardPlane",
+        "type": "rect",
+        "parameters": "fillColor:#ffffff;fillAlpha:0.5;strokeWidth:0;strokeColor:#000000;corners:16",
+        "bindings": {
+            "width": "40%",
+            "height": "32",
+            "position": { "x": "center", "y": "prevEndY + 6" }
+        },
+        "childrens": [
+            {
+                "id": "itemPriceText",
+                "type": "text",
+                "parameters": "textColor:#e39032;font:size=22,weight=400;outline:color=#000,width=2",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "text": ["%1", "$itemPrice"]
+                }
+            }
+        ]
+    },
+    "itemDescriptionSpr": {
+        "id": "itemDescriptionBackground",
+        "parent": "itemCardPlane",
+        "type": "rect",
+        "parameters": "fillColor:#b8c0db;fillAlpha:0.5;strokeWidth:0;corners:12",
+        "bindings": {
+            "width": "90%",
+            "height": "32%",
+            "position": { "x": "center", "y": "prevEndY + 14" }
+        },
+        "childrens": [
+            {
+                "id": "itemDescriptionTextSpr",
+                "type": "text",
+                "parameters": "textColor:#000000;font:size=18,weight=400;outline:color=#000,width=0;multiline;verticalCentered:false",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%"},
+                    "position": { "x": 0, "y": 4 },
+                    "text": ["%1", "$itemDescription"]
+                }
+            }
+        ]
+    },
+    "backButton": {
+        "id": "backButton",
+        "parent": "itemCardPlane",
+        "type": "button",
+        "parameters": "imageName:field;folderName:pPhoneMenu;width:100;height:46;tint:0xe64825;overTint:0xdb3a16;activeTint:0x75200d;clickSe:Cursor1",
+        "bindings": {
+            "position": { "x": "50% - width - 4", "y": "end - height - 8" },
+            "handler": "$backClick"
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:back;folderName:pPhoneMenu;keepAspect;width:24;height:24",
+                "bindings": {
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ]
+    },
+    "buyButton": {
+        "id": "buyButton",
+        "parent": "itemCardPlane",
+        "type": "button",
+        "parameters": "imageName:field;folderName:pPhoneMenu;width:100;height:46;tint:0x07f75f;overTint:0x00cf4c;activeTint:0x46825c;clickSe:Cursor1;keyboardKey:ok",
+        "bindings": {
+            "position": { "x": "50% + 4", "y": "prevY" },
+            "handler": "$buyClick",
+            "visible": "$isCanAfford"
+        },
+        "childrens": [
+            {
+                "type": "image",
+                "parameters": "imageName:ok;folderName:pPhoneMenu;keepAspect;width:36;height:36",
+                "bindings": {
+                    "position": { "x": "center", "y": "center" }
+                }
+            }
+        ]
+    }
+}

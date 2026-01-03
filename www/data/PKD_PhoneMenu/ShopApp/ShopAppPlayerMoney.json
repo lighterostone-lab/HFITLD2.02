@@ -1,0 +1,28 @@
+{
+    "id": "playerMoneySprBackground",
+    "type": "rect",
+    "parameters": "fillColor:#6737a6;fillAlpha:0.8;strokeWidth:2;strokeColor:#391766;corners:24",
+    "bindings": {
+        "position": { "x": "right - 6hdp", "y": "bottom - height - 26hdp" },
+        "size": { "width": "140hdp", "height": "26hdp" }
+    },
+    "childrens": [
+        {
+            "id": "playerMoneyIconSpr",
+            "type": "image",
+            "parameters": "width:32;height:32;imageName:goldIcon;folderName:pPhoneMenu;keepAspect",
+            "bindings": {
+                "position": { "x": "100% - width - 6", "y": "center"}
+            }
+        },
+        {
+            "id": "playerMoneyTextSpr",
+            "type": "text",
+            "parameters": "textColor:#e39032;font:size=22,weight=400;outline:color=#000,width=2",
+            "bindings": {
+                "size": { "width": "100% - prevWidth", "height": "100%"},
+                "text": ["%1", "@$gameParty.gold()"]
+            }
+        }
+    ]
+}

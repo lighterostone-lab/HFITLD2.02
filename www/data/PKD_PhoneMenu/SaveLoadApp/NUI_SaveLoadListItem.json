@@ -1,0 +1,309 @@
+{
+    "type": "rect",
+    "id": "_fileRoot",
+    "constants": {
+        "dateFormat": "en-US",
+        "autosave": "Autosave",
+        "mapScreenshotSize": 0.25
+    },
+    "availableFields": [
+        "$mapName",
+        "$gameTitle",
+        "$savefileIndexText",
+        "$playtime",
+        "$savefileDate",
+        "$isActiveInList",
+        "$isHaveData"
+    ],
+    "parameters": {
+        "fillColor": "#1A3636",
+        "corners": 8,
+        "strokeWidth": 0
+    },
+    "bindings": {
+        "size": {
+            "width": "246hdp",
+            "height": "180hdp"
+        }
+    },
+    "childrens": [
+        {
+            "type": "rect",
+            "id": "_selectedItem",
+            "parameters": {
+                "fillColor": "#677D6A",
+                "corners": 8,
+                "strokeWidth": 1,
+                "strokeColor": "#D6BD98"
+            },
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "100%"
+                },
+                "visible": "$isActiveInList"
+            }
+        },
+        {
+            "type": "rect",
+            "effects": ["shadow"],
+            "parameters": {
+                "fillColor": "#40534C",
+                "corners": {
+                    "topLeft": 8,
+                    "topRight": 8
+                },
+                "strokeWidth": 1
+            },
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "20%"
+                }
+            },
+            "childrens": [
+                {
+                    "type": "text",
+                    "parameters": {
+                        "alignment": "left",
+                        "font": {
+                            "face": null,
+                            "size": 18,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": "#000000", "width": 2 },
+                        "textColor": "#D6BD98",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualSize": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "80%",
+                            "height": "100%"
+                        },
+                        "text": ["%1","$mapName"],
+                        "fontSize": "18hdp",
+                        "position": {
+                            "x": "6hdp",
+                            "y": "0"
+                        }
+                    }
+                },
+                {
+                    "type": "text",
+                    "parameters": {
+                        "alignment": "right",
+                        "font": {
+                            "face": null,
+                            "size": 18,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": "#000000", "width": 2 },
+                        "textColor": "#cccccc",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualSize": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "20%",
+                            "height": "100%"
+                        },
+                        "text": ["%1","$savefileIndexText"],
+                        "fontSize": "16hdp",
+                        "position": {
+                            "x": "80% - 6hdp",
+                            "y": "0"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "bindings": {
+                "size": {
+                    "width": "100%",
+                    "height": "80%"
+                },
+                "position": {
+                    "x": "0",
+                    "y": "20% + 2hdp"
+                }
+            },
+            "childrens": [
+                {
+                    "type": "image",
+                    "createIf": "$isHaveMapImage",
+                    "parameters": {
+                        "folderName": "pPhoneMenu",
+                        "keepAspect": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "136hdp",
+                            "height": "104hdp"
+                        },
+                        "position": {
+                            "x": 2,
+                            "y": 2
+                        },
+                        "image": "saveNoImage"
+                    },
+                    "childrens": [
+                        {
+                            "type": "group",
+                            "id": "_mapCoverImageRoot",
+                            "bindings": {
+                                "size": {
+                                    "width": "100%",
+                                    "height": "100%"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "group",
+                    "bindings": {
+                        "size": {
+                            "width": "100% - 144hdp",
+                            "height": "80%"
+                        },
+                        "position": {
+                            "x": "prevEndX + 4hdp",
+                            "y": 2
+                        }
+                    },
+                    "childrens": [
+                        {
+                            "type": "group",
+                            "id": "_character1",
+                            "bindings": {
+                                "size": {
+                                    "width": "50%",
+                                    "height": "50%"
+                                },
+                                "position": {
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "id": "_character2",
+                            "bindings": {
+                                "size": {
+                                    "width": "50%",
+                                    "height": "50%"
+                                },
+                                "position": {
+                                    "x": "50%",
+                                    "y": 0
+                                }
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "id": "_character3",
+                            "bindings": {
+                                "size": {
+                                    "width": "50%",
+                                    "height": "50%"
+                                },
+                                "position": {
+                                    "x": 0,
+                                    "y": "50%"
+                                }
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "id": "_character4",
+                            "bindings": {
+                                "size": {
+                                    "width": "50%",
+                                    "height": "50%"
+                                },
+                                "position": {
+                                    "x": "50%",
+                                    "y": "50%"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "parameters": {
+                        "alignment": "left",
+                        "font": {
+                            "face": null,
+                            "size": 18,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": "#000000", "width": 2 },
+                        "textColor": "#D6BD98",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualSize": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "100%",
+                            "height": "20hdp"
+                        },
+                        "text": "$playtime",
+                        "fontSize": "17hdp",
+                        "position": {
+                            "x": "4hdp",
+                            "y": "bottom - 4hdp"
+                        }
+                    }
+                },
+                {
+                    "type": "text",
+                    "parameters": {
+                        "alignment": "right",
+                        "font": {
+                            "face": null,
+                            "size": 18,
+                            "italic": false,
+                            "bold": false,
+                            "weight": 0
+                        },
+                        "margins": { "x": 0, "y": 0 },
+                        "outline": { "color": "#000000", "width": 2 },
+                        "textColor": "#ffffff",
+                        "multiline": false,
+                        "verticalCentered": true,
+                        "actualSize": false
+                    },
+                    "bindings": {
+                        "size": {
+                            "width": "96%",
+                            "height": "20hdp"
+                        },
+                        "text": "$savefileDate",
+                        "fontSize": "15hdp",
+                        "position": {
+                            "x": "prevX",
+                            "y": "prevY"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

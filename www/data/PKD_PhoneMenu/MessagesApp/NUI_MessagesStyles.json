@@ -1,0 +1,215 @@
+{
+    "defaultMessage": {
+        "type": "plane",
+        "id": "_messageBackground",
+        "animations": [
+            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+            "field:x;relative;duration:0.2;keyframes:0=-20dp,100=0"
+        ],
+        "constants": {
+            "messageBaseHeight": "66hdp",
+            "messageExtraLineHeightAdd": "30hdp",
+            "onMessageAddedSE": "Miss"
+        },
+        "effects": ["shadow"],
+        "parameters": "folderName:pPhoneMenu;imageName:messageBackgroundNew_A;margins:8",
+        "bindings": {
+            "size": { "width": "90%", "height": "90%" },
+            "position": { "x": 0, "y": "center" }
+        },
+        "childrens": [
+            {
+                "type": "group",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%" }
+                },
+                "childrens": [
+                    {
+                        "type": "face",
+                        "id": "_faceImageSpr",
+                        "createIf": "$isHaveFaceImage",
+                        "parameters": "mirror",
+                        "bindings": {
+                            "size": "50hdp",
+                            "position": { "x": "6hdp", "y": "6hdp" },
+                            "faceName": "$faceImageName",
+                            "faceIndex": "$faceIndex"
+                        }
+                    },
+                    {
+                        "type": "group",
+                        "bindings": {
+                            "size": { "width": "100% - prevWidth", "height": "100%" },
+                            "position": { "x": "prevEndX + 6hdp", "y": "4hdp" }
+                        },
+                        "childrens": [
+                            {
+                                "type": "text",
+                                "id": "_nameTextSpr",
+                                "parameters": {
+                                    "alignment": "left",
+                                    "textColor": "#e1edbb",
+                                    "outline": { "width": 2, "color": "#000000" }
+                                },
+                                "bindings": {
+                                    "size": { "width": "100%", "height": "18hdp" },
+                                    "position": { "x": 0, "y": 0 },
+                                    "fontSize": "17hdp",
+                                    "text": ["%1", "$nameText"]
+                                }
+                            },
+                            {
+                                "type": "textExt",
+                                "createIf": "@PKD_PhoneMenu.PP.isUseExtendedTextInMessages() == true",
+                                "id": "_messageTextSprExt",
+                                "bindings": {
+                                    "size": { "width": "92%", "height": "100% - 22hdp" },
+                                    "position": { "x": "4hdp", "y": "prevEndY + 4hdp" },
+                                    "fontSize": "17hdp",
+                                    "text": ["%1", "$messageText"]
+                                }
+                            },
+                            {
+                                "type": "text",
+                                "id": "_messageTextSpr",
+                                "createIf": "@PKD_PhoneMenu.PP.isUseExtendedTextInMessages() == false",
+                                "parameters": {
+                                    "multiline": true,
+                                    "alignment": "left",
+                                    "verticalCentered": false
+                                },
+                                "bindings": {
+                                    "size": { "width": "92%", "height": "100% - 22hdp" },
+                                    "position": { "x": "4hdp", "y": "prevEndY + 4hdp" },
+                                    "fontSize": "17hdp",
+                                    "text": ["%1", "$messageText"]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "choiceAnswerMessage": {
+        "type": "plane",
+        "id": "_messageBackground",
+        "animations": [
+            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+            "field:x;relative;duration:0.2;keyframes:0=20dp,100=0"
+        ],
+        "constants": {
+            "messageBaseHeight": "66hdp",
+            "messageExtraLineHeightAdd": "30hdp",
+            "onMessageAddedSE": ""
+        },
+        "effects": ["shadow"],
+        "parameters": "folderName:pPhoneMenu;imageName:messageBackgroundNew_B;margins:8",
+        "bindings": {
+            "size": { "width": "90%", "height": "90%" },
+            "position": { "x": "50hdp", "y": "center" }
+        },
+        "childrens": [
+            {
+                "type": "group",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%" }
+                },
+                "childrens": [
+                    {
+                        "type": "group",
+                        "bindings": {
+                            "size": { "width": "100% - prevWidth", "height": "100%" },
+                            "position": { "x": "6hdp", "y": "4hdp" }
+                        },
+                        "childrens": [
+                            {
+                                "type": "textExt",
+                                "id": "_messageTextSprExt",
+                                "bindings": {
+                                    "size": { "width": "90%", "height": "60%" },
+                                    "position": { "x": "6hdp", "y": "center" },
+                                    "fontSize": "17hdp",
+                                    "text": ["%1", "$messageText"]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "customMessage": {
+        "type": "plane",
+        "id": "_messageBackground",
+        "animations": [
+            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+            "field:x;relative;duration:0.2;keyframes:0=-20dp,100=0"
+        ],
+        "constants": {
+            "messageBaseHeight": "66hdp",
+            "messageExtraLineHeightAdd": "30hdp",
+            "onMessageAddedSE": "Miss"
+        },
+        "effects": ["shadow"],
+        "parameters": "folderName:pPhoneMenu;imageName:messageBackgroundNew_C;margins:8",
+        "bindings": {
+            "size": { "width": "90%", "height": "90%" },
+            "position": { "x": 0, "y": "center" }
+        },
+        "childrens": [
+            {
+                "type": "group",
+                "bindings": {
+                    "size": { "width": "100%", "height": "100%" }
+                },
+                "childrens": [
+                    {
+                        "type": "group",
+                        "bindings": {
+                            "size": { "width": "100%", "height": "100%" },
+                            "position": { "x": 0, "y": 0 }
+                        },
+                        "childrens": [
+                            {
+                                "type": "text",
+                                "id": "_messageTextSpr",
+                                "effects": ["shadow"],
+                                "parameters": {
+                                    "multiline": true,
+                                    "alignment": "center",
+                                    "verticalCentered": true,
+                                    "textColor": "#e1edbb"
+                                },
+                                "bindings": {
+                                    "size": { "width": "92%", "height": "92%" },
+                                    "position": { "x": "4hdp", "y": 0 },
+                                    "fontSize": "18hdp",
+                                    "text": ["%1", "$messageText"]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "imageMessage": {
+        "type": "image",
+        "id": "_messageImageSpr",
+        "animations": [
+            "field:opacity;duration:0.25;keyframes:0=0,100=255",
+            "field:x;relative;duration:0.2;keyframes:0=-20dp,100=0"
+        ],
+        "constants": {
+            "onMessageAddedSE": "Miss"
+        },
+        "effects": ["shadow"],
+        "parameters": "folderName:pictures;keepAspect",
+        "bindings": {
+            "size": { "width": "90%", "height": "200hdp" },
+            "position": { "x": 0, "y": 0 },
+            "image": "$messageImageName"
+        }
+    }
+}

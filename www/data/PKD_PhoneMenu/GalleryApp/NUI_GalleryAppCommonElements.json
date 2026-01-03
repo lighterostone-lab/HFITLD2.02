@@ -1,0 +1,54 @@
+{
+    "albumListElement": {
+        "type": "list",
+        "id": "albumslist",
+        "animations": [
+            "field:opacity;duration:0.3;keyframes:0=25,100=255;delay:0.25",
+            "field:y;relative;duration:0.2;keyframes:0=-20,100=0;delay:0.25"
+        ],
+        "parameters": {
+            "maxCols": 1,
+            "backgroundType": 2,
+            "itemsPadding": 4
+        },
+        "bindings": {
+            "size": { "width": "100%", "height": "92%" },
+            "position": { "x": "center - 8", "y": "center" }
+        }
+    },
+    "imagesListElement": {
+        "type": "list",
+        "id": "imagesList",
+        "animations": [
+            "field:opacity;duration:0.2;keyframes:0=25,100=255;",
+            "field:y;relative;duration:0.15;keyframes:0=20,100=0;"
+        ],
+        "parameters": {
+            "maxCols": 2,
+            "backgroundType": 2,
+            "itemsPadding": 4
+        },
+        "bindings": {
+            "size": { "width": "100%", "height": "92%" },
+            "position": { "x": "center + 8hdp", "y": "center" }
+        }
+    },
+    "bigScreenImagePreviewContainer": {
+        "type": "screen",
+        "id": "gameScreenContainer",
+        "childrens": [
+            {
+                "type": "image",
+                "animations": [
+                    "field:opacity;duration:0.3;keyframes:0=25,100=255",
+                    "field:y;relative;duration:0.2;keyframes:0=-20,100=0"
+                ],
+                "parameters": "folderName:pPhoneMenu;keepAspect",
+                "bindings": {
+                    "position": { "x": "center", "y": "center" },
+                    "image": "$bigPreviewImage"
+                }
+            }
+        ]
+    }
+}
